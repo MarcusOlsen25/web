@@ -1,0 +1,40 @@
+header {
+    background-color: rgba(19, 19, 90, 0.603);
+    color: whitesmoke;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+
+
+#about {
+  position: relative; /* Needed for positioning the image within this block */
+}
+
+.top-right-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 300px;      /* or whatever size looks good */
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+main {
+    background-color:whitesmoke;
+    border: 1px solid;
+    border-color:darkgrey;
+    color:#333333;
+    width: 900px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+main section {
+    padding-right: 400px;
+}
