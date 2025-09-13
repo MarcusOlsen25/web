@@ -1,15 +1,47 @@
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('fonts/Devia.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 header {
-    background-color: rgba(19, 19, 90, 0.603);
-    color: whitesmoke;
-    width: 100%;
+    background-color: whitesmoke;
+    color: black;
+    width: 900px;
     text-align: center;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 5px;
+    border: 1px solid;
+    border-color:darkgrey;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+    margin-right: 40px; /* adjust as needed */
+    text-decoration: none; /* optional: removes underline */
+    font-size: 25px;
+    color: black;
+}
+
+  /* Optional: remove margin from last link */
+nav a:last-child {
+    margin-right: 0;
 }
 
 body {
+    font-family: 'MyCustomFont', sans-serif;
     background-color: grey;
 }
 
-#about {
+#about, #projects, #contact {
   position: relative; /* Needed for positioning the image within this block */
 }
 
@@ -29,9 +61,10 @@ main {
     color:#333333;
     width: 900px;
     padding: 30px;
-    padding-top: 10px;
+    padding-top: 0px;
+    height: 800px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -50,4 +83,49 @@ main h2 {
 
 main section {
     padding-right: 400px;
+}
+
+code {
+  background-color: #f4f4f4;
+  padding: 0px;
+  display: block;
+  border-radius: 0px;
+  font-family: monospace;
+  margin-left: 0px;
+}
+
+pre {
+  margin: 0;
+  padding: 0;
+}
+
+.code-wrapper {
+      border: 2px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      display: inline-block; /* optional: shrink to content width */
+      margin-bottom: 0px;
+  }
+
+.code-container {
+      display: flex;
+      gap: 50px; /* space between the blocks */
+    }
+
+.code-block {
+  flex: 1; /* make both blocks take equal width */
+  background-color: #f4f4f4;
+  padding: 0px;
+  border-radius: 0px;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre;
+}
+
+.text {
+  line-height: 1.6;
+}
+
+.hidden {
+  display: none;
 }

@@ -11,9 +11,11 @@
 
 <header>
   <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#" id="show-about">About Me</a>
+    <a href="#" id="show-projects">Projects</a>
+    <a href="#" id="show-contacts">Contact</a>
+    <a href="#">Skills</a>
+    <a href="files/CV2025.pdf" target="_blank">CV</a>
   </nav>
 </header>
 
@@ -21,39 +23,91 @@
 <main>
   <h1>Marcus Olsen</h1>
   <h2>Bachelor of Science in Computer Science</h2>
+  
   <section id="about">
     <img src="img/cv.jpg" alt="Profile Photo" class="top-right-image">
     <h3>About Me</h3>
-    <p>Hello! I'm Marcus, a computer science student.
+    <p class="text">Hello! I'm Marcus, a computer science student.
       I'm currently doing my Master's in Computer Science at the University of Southern Denmark.</p>
+    <p class="text">I have a strong interest in the language processing aspects of programming languages.
+      I'm particularly fascinated by how high-level programming languages are translated into low-level instructions,
+      whether they are executed directly by hardware or interpreted within a virtual machine.
+      The intricacies of this translation process, along with the underlying low-level memory management,
+      are areas that deeply engage me.
+    </p>
   </section>
 
-  <section id="projects">
-    <h4>Projects</h4>
+  <section id="projects" class="hidden">
+    <img src="img/cv.jpg" alt="Profile Photo" class="top-right-image">
+    <h3>Projects</h3>
     <div class="project">
-      <h3>Personal Blog</h3>
-      <p>A responsive blog built with HTML, CSS, and JavaScript where I share my thoughts on web development.</p>
-    </div>
-    <div class="project">
-      <h5>Portfolio Website</h5>
-      <p>A portfolio website showcasing my work and skills, built using React and styled-components.</p>
-    </div>
-    <div class="project">
-      <h6>Task Manager App</h6>
-      <p>A simple task management app using Vue.js to help organize daily tasks effectively.</p>
-    </div>
-  </section>
+      <h4>A compiler for Cobra</h4>
 
-  <section id="contact">
-    <h7>Contact</h7>
-    <p>You can reach me at: <a href="mailto:jane.doe@example.com">jane.doe@example.com</a></p>
-    <p>Or follow me on <a href="https://twitter.com/janedoe" target="_blank" rel="noopener noreferrer">Twitter</a> and <a href="https://linkedin.com/in/janedoe" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+    <div class="code-wrapper">
+      <div class="code-container">
+      <pre class="code-block">
+      <code>func myCobraFunc(int y) void {
+  int x = 2;
+}</code>
+      </pre>
+
+    <pre class="code-block">
+      <code>myCobraFunc:
+	pushq %rbp
+	movq %rsp, %rbp
+	subq $8, %rsp
+	movq $2, %rax
+	movq %rax, -8(%rbp)
+end_myCobraFunc:
+	addq $8, %rsp
+	popq %rbp
+	ret</code>
+      </pre>
+      </div>
+    </div>
+
+    <p class="text">A compiler for my own programming language, Cobra, that translates Cobra code into assembly code.
+      Cobra is a general purpose programming language with object oriented features. This constitutes my Bachelor Project.
+    </p>
+    </section>
+  
+  <section id="contact" class="hidden">
+    <img src="img/cv.jpg" alt="Profile Photo" class="top-right-image">
+    <h3>Contact</h3>
+    <p>Marcus Aunstrup Olsen</p>
+    <p>marcus.aunstrup.olsen@gmail.com</p>
+    <p>+45 42308782</p>
+    <p>5000 Odense C, Denmark</p>
   </section>
+  
+
 </main>
+<script>
+  const aboutSection = document.getElementById('about');
+  const projectsSection = document.getElementById('projects');
+  const contactsSection = document.getElementById('contact');
 
-<footer>
-  &copy; 2025 Jane Doe. All rights reserved.
-</footer>
+  document.getElementById('show-about').addEventListener('click', function (e) {
+    e.preventDefault(); // prevent scrolling to top
+    aboutSection.classList.remove('hidden');
+    projectsSection.classList.add('hidden');
+    contactsSection.classList.add('hidden');
+  });
+
+  document.getElementById('show-projects').addEventListener('click', function (e) {
+    e.preventDefault(); // prevent scrolling to top
+    aboutSection.classList.add('hidden');
+    projectsSection.classList.remove('hidden');
+    contactsSection.classList.add('hidden');
+  });
+
+  document.getElementById('show-contacts').addEventListener('click', function (e) {
+    e.preventDefault(); // prevent scrolling to top
+    aboutSection.classList.add('hidden');
+    projectsSection.classList.add('hidden');
+    contactsSection.classList.remove('hidden');
+  });
+</script>
 
 </body>
 </html>
