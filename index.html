@@ -14,7 +14,7 @@
     <a href="#" id="show-about">About Me</a>
     <a href="#" id="show-projects">Projects</a>
     <a href="#" id="show-contacts">Contact</a>
-    <a href="#">Skills</a>
+    <a href="#" id="show-skills">Skills</a>
     <a href="files/CV2025.pdf" target="_blank">CV</a>
   </nav>
 </header>
@@ -63,8 +63,13 @@ end_myCobraFunc:
     </div>
 
     <p class="text">A compiler for my own programming language, Cobra, that translates Cobra code into assembly code.
-      Cobra is a general purpose programming language with object oriented features. This constitutes my Bachelor Project.
+      Cobra is a general purpose programming language with object oriented features.
+      The compiler is written in Python.
+      This constitutes my Bachelor Project.
     </p>
+
+    <a href="https://github.com/MarcusOlsen25/Cobra" target="_blank">https://github.com/MarcusOlsen25/Cobra</a>
+
     </section>
   
   <section id="contact" class="hidden">
@@ -74,6 +79,27 @@ end_myCobraFunc:
     <p>marcus.aunstrup.olsen@gmail.com</p>
     <p>+45 42308782</p>
     <p>5000 Odense C, Denmark</p>
+    <a href="https://github.com/MarcusOlsen25" target="_blank">GitHub</a>
+    <p></p>
+    <a href="https://www.linkedin.com/in/marcus-olsen-50b293349/" target="_blank">LinkedIn</a>
+  </section>
+
+  <section id="skills" class="hidden">
+    <img src="img/cv.jpg" alt="Profile Photo" class="top-right-image">
+    <h3>Skills</h3>
+    <p class="text">Through my studies, I have developed proficiency in a wide range of programming languages, including Python,
+      Java, C, C++, Haskell, SQL, and Assembly. I am also experienced with Git for version control,
+      which I’ve used across multiple projects.</p>
+    <p class="text">For my bachelor’s thesis, I developed a compiler in Python for a self-designed language called Cobra,
+      which translates to Assembly code. This project involved low-level memory management of both the stack and
+      heap in Assembly. As an alternative approach, I also implemented a bytecode interpreter in C that compiles Cobra code
+      to custom bytecode and executes the compiled code in a custom virtual machine.</p>
+    <p class="text">These projects deepened my understanding of low-level memory management and sparked a strong interest in
+      systems with constrained resources, where efficient use of memory is critical.</p>
+    <p class="text">Beyond that, I have implemented various data structures and algorithms in C and conducted kernel-level
+      programming by adding a character device driver to the Linux kernel.</p>
+    <p class="text">On the theoretical side, I’ve studied algorithm analysis throughout my degree, gaining a solid foundation
+      in time and space complexity, including how to derive and apply these metrics across different types of algorithms.</p>
   </section>
   
 
@@ -82,12 +108,14 @@ end_myCobraFunc:
   const aboutSection = document.getElementById('about');
   const projectsSection = document.getElementById('projects');
   const contactsSection = document.getElementById('contact');
+  const skillsSection = document.getElementById('skills');
 
   document.getElementById('show-about').addEventListener('click', function (e) {
     e.preventDefault(); // prevent scrolling to top
     aboutSection.classList.remove('hidden');
     projectsSection.classList.add('hidden');
     contactsSection.classList.add('hidden');
+    skillsSection.classList.add('hidden');
   });
 
   document.getElementById('show-projects').addEventListener('click', function (e) {
@@ -95,6 +123,7 @@ end_myCobraFunc:
     aboutSection.classList.add('hidden');
     projectsSection.classList.remove('hidden');
     contactsSection.classList.add('hidden');
+    skillsSection.classList.add('hidden');
   });
 
   document.getElementById('show-contacts').addEventListener('click', function (e) {
@@ -102,6 +131,15 @@ end_myCobraFunc:
     aboutSection.classList.add('hidden');
     projectsSection.classList.add('hidden');
     contactsSection.classList.remove('hidden');
+    skillsSection.classList.add('hidden');
+  });
+
+  document.getElementById('show-skills').addEventListener('click', function (e) {
+    e.preventDefault(); // prevent scrolling to top
+    aboutSection.classList.add('hidden');
+    projectsSection.classList.add('hidden');
+    contactsSection.classList.add('hidden');
+    skillsSection.classList.remove('hidden');
   });
 </script>
 
