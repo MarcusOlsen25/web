@@ -105,6 +105,9 @@ pre {
       padding: 10px;
       display: inline-block; /* optional: shrink to content width */
       margin-bottom: 0px;
+      margin-top: 10;
+      padding-bottom: 10px;
+      padding-top: 10px;
   }
 
 .code-container {
